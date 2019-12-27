@@ -1,7 +1,7 @@
 # Личный проект «TaskForce»
 
 * Студент: [Ирина Ковальчук](https://up.htmlacademy.ru/yii/1/user/673735).
-* Наставник: `Неизвестно`.
+* Наставник: [Влад Григорев](https://htmlacademy.ru/profile/id1249831).
 
 ---
 
