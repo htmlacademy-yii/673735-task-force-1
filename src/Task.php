@@ -17,37 +17,37 @@ class Task
     private $workerId;
     private $clientId;
 
-    private $current_status = self::STATUS_NEW;
-    private $current_action = self::ACTION_RESPOND;
+    private $currentStatus = self::STATUS_NEW;
+    private $currentAction = self::ACTION_RESPOND;
 
-    private $status_titles = array(
+    private $statusTitles = [
         self::STATUS_NEW => 'Новое',
         self::STATUS_CANCELED => 'Отменено',
         self::STATUS_IN_WORK => 'В работе',
         self::STATUS_DONE => 'Выполнено',
         self::STATUS_FAILED => 'Провалено'
-    );
-    private $action_titles = array(
+    ];
+    private $actionTitles = [
         self::ACTION_CANCEL => 'Отменить',
         self::ACTION_RESPOND => 'Откликнуться',
         self::ACTION_MARK_AS_DONE => 'Выполнено',
         self::ACTION_REFUSE => 'Отказаться'
-    );
-    private $worker_actions_by_status = array(
+    ];
+    private $workerActionsByStatus = [
         self::STATUS_NEW => array(self::ACTION_RESPOND),
         self::STATUS_CANCELED => null,
         self::STATUS_IN_WORK => array(self::ACTION_REFUSE),
         self::STATUS_DONE => null,
         self::STATUS_FAILED => null
-    );
+    ];
 
-    private $client_actions_by_status = array(
+    private $clientActionsByStatus = [
         self::STATUS_NEW => array(self::ACTION_CANCEL),
         self::STATUS_CANCELED => null,
         self::STATUS_IN_WORK => array(self::ACTION_MARK_AS_DONE),
         self::STATUS_DONE => null,
         self::STATUS_FAILED => null
-    );
+    ];
 
     public function __construct($workerId, $clientId)
     {
@@ -56,26 +56,26 @@ class Task
     }
 
     public function getStatusTitle($status) {
-        return $this->status_titles[$status];
+        return $this->statusTitles[$status];
     }
 
     public function getActionTitle($action) {
-        return $this->action_titles[$action];
+        return $this->actionTitles[$action];
     }
 
     public function getCurrentStatus() {
-        return $this->current_status;
+        return $this->currentStatus;
     }
 
     public function getCurrentAction() {
-        return $this->current_action;
+        return $this->currentAction;
     }
 
     public function getAvailableActions($status, $isWorker) {
         if ($isWorker) {
-            return $this->worker_actions_by_status[$status];
+            return $this->workerActionsByStatus[$status];
         } else {
-            return $this->client_actions_by_status[$status];
+            return $this->clientActionsByStatus[$status];
         }
     }
 }
