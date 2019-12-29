@@ -1,5 +1,5 @@
 <?php
-use TaskForce\components\Task;
+use TaskForce\Components\Task;
 
 require_once 'vendor/autoload.php';
 
