@@ -1,5 +1,5 @@
 <?php
-namespace taskforce;
+namespace TaskForce\components;
 
 class Task
 {
@@ -72,10 +72,6 @@ class Task
     }
 
     public function getAvailableActions($status, $isWorker) {
-        if ($isWorker) {
-            return $this->workerActionsByStatus[$status];
-        } else {
-            return $this->clientActionsByStatus[$status];
-        }
+        return $isWorker ? $this->workerActionsByStatus[$status] : $this->clientActionsByStatus[$status];
     }
 }
