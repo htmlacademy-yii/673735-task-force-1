@@ -4,19 +4,19 @@ CREATE DATABASE taskforce
 
 USE taskforce;
 
-CREATE TABLE `category` (
+CREATE TABLE `categories` (
     `id` int(11) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY
 );
 
-CREATE TABLE `status` (
+CREATE TABLE `statuses` (
     `id` int(11) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY
 );
 
-CREATE TABLE `user` (
+CREATE TABLE `users` (
     `id` int(11) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY
 );
 
-CREATE TABLE `task` (
+CREATE TABLE `tasks` (
     `id` int(11) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY
 );
 

@@ -1,0 +1,14 @@
+Components/
+  User
+  Review
+
+Controllers/
+  ReviewsController // add review
+  RegisterController
+  AuthConctroller
+  TaskController // change status
+  UserController //change any data of user (email, password, role etc)
+
+Models
+  Task // model for task with all data, parseTask() will be there
+  Review // model for review with its data
